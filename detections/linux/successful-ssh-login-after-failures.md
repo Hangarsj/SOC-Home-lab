@@ -53,7 +53,7 @@ Create a high-severity alert
 3. Log in successfully within 5 minutes. 
 
 
-## Possible False positives 
+## Possible False Positives 
 
 - a legitimate user mistyped a password
 - Old or wrong credentials used by a legitimate automated process before succeeding. 
