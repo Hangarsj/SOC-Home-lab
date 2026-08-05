@@ -14,8 +14,7 @@ The main goal is to build a small but complete security monitoring environment t
 * Alert investigation 
 * Detection rule development, testing and tuning
 * MITRE ATT&CK mapping  
-* Linux hardening 
-* Simple firewall rules 
+* Linux hardening  
 
 ## Current Architecture
 
