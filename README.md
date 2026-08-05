@@ -66,7 +66,7 @@ Detection development follows a simple workflow:
 1. Generate activity 
 2. Confirm the activity in raw logs
 3. Identify useful fields 
-4. Create detection rule 
+4. Create a detection rule 
 5. Verify that the rule triggers
 6. Investigate the generated alert
 7. Tune and document the rule 
