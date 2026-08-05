@@ -51,7 +51,7 @@ Bridged networking is disabled, and NAT is only used temporarily when software i
 
 ## Why These Choices Were Made 
 
-Elastic provides log collection, endpoint management, detection rules, alerting, and investigation in one platform. The Basic license is suitable for a home lab and allows the environment to run without a daily ingestion license limit.
+Elastic provides log collection, endpoint management, detection rules, alerting, and investigation in one platform without a daily ingestion license limit.
 
 Elasticsearch, Kibana, and Fleet Server run on one virtual machine to reduce memory usage. This is a practical choice for a laptop-based lab.
 
