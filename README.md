@@ -46,7 +46,7 @@ Bridged networking is disabled, and NAT is only used temporarily when software i
 - Linux logs and metrics 
 - Nginx logs and metrics 
 - Auditd telemetry
-- Custom SSH detection rules  
+- Detection rules, ssh and privilege changes  
 
 ## Why These Choices Were Made 
 
