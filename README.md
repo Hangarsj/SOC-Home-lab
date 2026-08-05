@@ -1,6 +1,6 @@
 # SOC Home Lab 
 
-This project is a compact, self-hosted SOC lab used to practice log collection, security monitoring, Linux hardening, detection engineering, and controlled attack simulations.
+This repository documents the development of a compact, self-hosted SOC lab built for hands-on learning. I use the environment to practice SOC operations and defensive security engineering while documenting the configuration, testing, troubleshooting, and lessons learned along the way.
 
 This project is under active development.
 
