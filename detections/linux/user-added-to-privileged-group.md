@@ -1,6 +1,6 @@
-# Linux User Added to Privileged Group
+# Linux User Added to Sudo Group
 
-Detects Linux commands used to add a user to the privileged `sudo` group.
+Detects Linux user-management commands with arguments used to add a user to the privileged `sudo` group.
 
 ## Rule Summary 
 
@@ -33,7 +33,7 @@ process where
         ) or 
         (
             process.name == "gpasswd" and
-            process.args in ("-M", "--members", "-a", "--add")
+            process.args in ("-a", "--add")
         )
     )
 ``` 
