@@ -77,7 +77,7 @@ Current detection work includes:
 
 - [Repeated Failed SSH Authentication](detections/linux/repeated-failed-ssh-authentication.md)
 - [Successful SSH Login After Repeated Failures](detections/linux/successful-ssh-login-after-failures.md)
-- [Linux User Added to Privileged Group](detections/linux/user-added-to-privileged-group.md)
+- [Linux User Added to sudo Group](detections/linux/user-added-to-sudo-group.md)
 
 ## Lessons Learned So Far
 
