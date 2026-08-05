@@ -6,13 +6,15 @@ Five or more failed attempts from one source within a short period may indicate 
 
 ## Rule summary
 
-**Status:** Experimental
-**Platform:** Linux 
-**Type:** Threshold
-**Group by:** `source.ip`, `host.name`
-**Severity:** Medium
-**Threshold:** 5 events 
-**MITRE ATT&CK:** TA0006 - Credential Access, T1110.001, T1110.003 - Password guessing, Password spraying
+- **Status:** Experimental
+- **Platform:** Linux 
+- **Type:** Threshold
+- **Group by:** `source.ip`, `host.name`
+- **Severity:** Medium
+- **Threshold:** 5 events 
+- **MITRE ATT&CK:** 
+    - TA0006 - Credential Access 
+        - T1110.001, T1110.003 - Password guessing, Password spraying
 
 ## KQL Query
 
