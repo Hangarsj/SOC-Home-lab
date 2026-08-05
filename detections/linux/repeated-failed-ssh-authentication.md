@@ -16,7 +16,7 @@ Five or more failed attempts from one source within a short period may indicate 
     - TA0006 - Credential Access 
         - T1110.001, T1110.003 - Password guessing, Password spraying
 
-## KQL Query
+## Query
 
 ```kql
 host.os.type: "linux" and
