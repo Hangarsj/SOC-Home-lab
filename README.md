@@ -82,8 +82,7 @@ Current detection work includes:
 
 ## Lessons Learned So Far
 
-During testing, the Linux root filesystem became full, which prevented `rsyslog` from writing new authentication events. As a result, Elastic received no new `system.auth` logs and the SSH detection stopped triggering.
-- The issue was resolved by extending the LVM logical volume.
+During testing, the Linux root filesystem became full, which prevented `rsyslog` from writing new authentication events. As a result, Elastic received no new `system.auth` logs and the SSH detection stopped triggering. The issue was resolved by extending the LVM logical volume.
 
 
 ## Roadmap 
