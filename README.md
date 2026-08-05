@@ -51,7 +51,7 @@ Bridged networking is disabled, and NAT is only used temporarily when software i
 
 ## Why These Choices Were Made 
 
-Elastic provides log collection, endpoint management, detection rules, alerting, and investigation in one platform without a daily ingestion limit.
+Elastic was selected because it supports log collection, endpoint management, detection rules, alerting and investigation within the same environment.
 
 Elasticsearch, Kibana, and Fleet Server run on one virtual machine to reduce memory usage. This is a practical choice for a laptop-based lab.
 
