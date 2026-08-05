@@ -76,8 +76,9 @@ Detection development follows a simple workflow:
 
 Current detection work includes: 
 
-- [Repeated Failed SSH Authentication](detections/ssh/repeated-failed-ssh-authentication.md)
-- [Successful SSH Login After Repeated Failures](detections/ssh/successful-ssh-login-after-failures.md)
+- [Repeated Failed SSH Authentication](detections/linux/repeated-failed-ssh-authentication.md)
+- [Successful SSH Login After Repeated Failures](detections/linux/successful-ssh-login-after-failures.md)
+- [Linux User Added to Privileged Group](detections/linux/user-added-to-privileged-group.md)
 
 ## Lessons Learned So Far
 
