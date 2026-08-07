@@ -44,8 +44,6 @@ Bridged networking is disabled, and NAT is only used temporarily when software i
 - One monitored Ubuntu endpoint
 - Kali Linux for testing 
 - Linux logs and metrics 
-- Nginx logs and metrics 
-- Auditd telemetry
 - Detection rules, ssh and privilege changes  
 
 ## Why These Choices Were Made 
