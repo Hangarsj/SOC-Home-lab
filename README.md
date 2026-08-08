@@ -20,7 +20,7 @@ The main goal is to build a small but complete security monitoring environment t
 
 ```mermaid
 flowchart TB
-    HOST["Windows 11 Host<br/>VMware Workstation"]
+    HOST["Windows Host<br/>VMware Workstation"]
 
     subgraph LAB["Isolated Network<br/>10.10.20.0/24"]
         direction TB
