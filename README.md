@@ -24,27 +24,43 @@ flowchart LR
 
     subgraph LAB["Isolated Network<br/>10.10.20.0/24"]
         ELASTIC["NW-ELASTIC01<br/>Elasticsearch<br/>Kibana<br/>Fleet Server"]
+
         LINUX["NW-LINUX01<br/>Ubuntu Server<br/>Elastic Agent<br/>Nginx<br/>Auditd Manager"]
+
+        WINDOWS["NW-WINDOWS01<br/>Windows 11 Enterprise<br/>Elastic Agent<br/>Sysmon"]
+
         ATTACK["NW-ATTACK01<br/>Kali Linux"]
     end
      
     HOST -->|Administration| ELASTIC
     HOST -->|Administration| LINUX
+    HOST -->|Administration| WINDOWS
+
     ATTACK -->|Controlled test activity| LINUX
+    ATTACK -->|Controlled test activity| WINDOWS
+
     LINUX -->|Logs and telemetry| ELASTIC
+    WINDOWS -->|Windows Event Logs<br/>Sysmon telemetry| ELASTIC
 ```
 The virtual machines communicate over a dedicated VMware host-only network.
 
 Bridged networking is disabled, and NAT is only used temporarily when software installation or updates require internet access.
 
 
+```markdown
 ## Current Implementation
 
-- Elastic Security server 
-- One monitored Ubuntu endpoint
-- Kali Linux for testing 
-- Linux logs and metrics 
-- Detection rules, ssh and privilege changes  
+- Elastic Security server running Elasticsearch, Kibana, and Fleet Server
+- Ubuntu Server endpoint monitored with Elastic Agent
+- Windows 11 Enterprise endpoint monitored with Elastic Agent
+- Sysmon installed on the Windows endpoint for enhanced endpoint telemetry
+- Linux authentication, audit, and system telemetry
+- Windows Security, System, and Application event logs
+- Sysmon process and network telemetry
+- Kali Linux for controlled security testing
+- Linux detection rules for SSH authentication and privilege changes
+- Windows detection engineering in progress
+``` 
 
 ## Why These Choices Were Made 
 
@@ -84,9 +100,9 @@ Current detection work includes:
 
 ## Roadmap 
 
-- Add a Windows endpoint
+- Develop and test Windows detection rules
 - Build security monitoring dashboards in Kibana
-- Continue developing and testing detection rules
+- Continue developing and tuning Linux detection rules
 - Improve Linux hardening 
 - Add controlled attack simulations with Atomic Red Team
 
