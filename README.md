@@ -19,9 +19,6 @@ The main goal is to build a small but complete security monitoring environment t
 ## Current Architecture
 
 ```mermaid
-## Current Architecture
-
-```mermaid
 flowchart LR
     HOST["Windows 11 Host<br/>VMware Workstation"]
 
