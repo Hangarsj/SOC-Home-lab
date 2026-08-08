@@ -8,13 +8,13 @@ This project is under active development.
 
 The main goal is to build a small but complete security monitoring environment that is intended to support practice with: 
 
-* SIEM administration 
-* Linux and Windows security monitoring 
-* Log and audit collection
-* Alert investigation 
-* Detection rule development, testing and tuning
-* MITRE ATT&CK mapping  
-* Linux hardening  
+- SIEM administration 
+- Linux and Windows security monitoring 
+- Log and audit collection
+- Alert investigation 
+- Detection rule development, testing and tuning
+- MITRE ATT&CK mapping  
+- Linux hardening  
 
 ## Current Architecture
 
@@ -52,8 +52,6 @@ The virtual machines communicate over a dedicated VMware host-only network.
 
 Bridged networking is disabled, and NAT is only used temporarily when software installation or updates require internet access.
 
-
-```markdown
 ## Current Implementation
 
 - Elastic Security server running Elasticsearch, Kibana, and Fleet Server
@@ -66,8 +64,7 @@ Bridged networking is disabled, and NAT is only used temporarily when software i
 - Kali Linux for controlled security testing
 - Linux detection rules for SSH authentication and privilege changes
 - Windows detection engineering in progress
-``` 
-
+ 
 ## Why These Choices Were Made 
 
 Elastic was selected because it supports log collection, endpoint management, detection rules, alerting and investigation within the same environment.
