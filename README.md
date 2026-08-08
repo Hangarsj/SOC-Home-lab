@@ -19,32 +19,26 @@ The main goal is to build a small but complete security monitoring environment t
 ## Current Architecture
 
 ```mermaid
+## Current Architecture
+
+```mermaid
 flowchart LR
     HOST["Windows 11 Host<br/>VMware Workstation"]
 
     subgraph LAB["Isolated Network<br/>10.10.20.0/24"]
-        direction LR
-
-        ATTACK["NW-ATTACK01<br/>Kali Linux"]
-
-        subgraph ENDPOINTS["Monitored Endpoints"]
-            direction TB
-
-            LINUX["NW-LINUX01<br/>Ubuntu Server<br/>Elastic Agent<br/>Nginx<br/>Auditd Manager"]
-
-            WINDOWS["NW-WINDOWS01<br/>Windows 11 Enterprise<br/>Elastic Agent<br/>Sysmon"]
-        end
-
         ELASTIC["NW-ELASTIC01<br/>Elasticsearch<br/>Kibana<br/>Fleet Server"]
-
-        ATTACK -->|Controlled test activity| LINUX
-        ATTACK -->|Controlled test activity| WINDOWS
-
-        LINUX -->|Logs and telemetry| ELASTIC
-        WINDOWS -->|Windows Event Logs<br/>Sysmon telemetry| ELASTIC
+        LINUX["NW-LINUX01<br/>Ubuntu Server<br/>Elastic Agent<br/>Nginx<br/>Auditd Manager"]
+        WINDOWS["NW-WINDOWS01<br/>Windows 11 Enterprise<br/>Elastic Agent<br/>Sysmon"]
+        ATTACK["NW-ATTACK01<br/>Kali Linux"]
     end
 
-    HOST -->|Lab administration| ELASTIC
+    HOST --- LAB
+
+    ATTACK -->|Controlled test activity| LINUX
+    ATTACK -->|Controlled test activity| WINDOWS
+
+    LINUX -->|Logs and telemetry| ELASTIC
+    WINDOWS -->|Windows Event Logs<br/>Sysmon telemetry| ELASTIC
 ```
 The virtual machines communicate over a dedicated VMware host-only network.
 
