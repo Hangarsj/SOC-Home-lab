@@ -23,24 +23,28 @@ flowchart LR
     HOST["Windows 11 Host<br/>VMware Workstation"]
 
     subgraph LAB["Isolated Network<br/>10.10.20.0/24"]
-        ELASTIC["NW-ELASTIC01<br/>Elasticsearch<br/>Kibana<br/>Fleet Server"]
-
-        LINUX["NW-LINUX01<br/>Ubuntu Server<br/>Elastic Agent<br/>Nginx<br/>Auditd Manager"]
-
-        WINDOWS["NW-WINDOWS01<br/>Windows 11 Enterprise<br/>Elastic Agent<br/>Sysmon"]
+        direction LR
 
         ATTACK["NW-ATTACK01<br/>Kali Linux"]
+
+        subgraph ENDPOINTS["Monitored Endpoints"]
+            direction TB
+
+            LINUX["NW-LINUX01<br/>Ubuntu Server<br/>Elastic Agent<br/>Nginx<br/>Auditd Manager"]
+
+            WINDOWS["NW-WINDOWS01<br/>Windows 11 Enterprise<br/>Elastic Agent<br/>Sysmon"]
+        end
+
+        ELASTIC["NW-ELASTIC01<br/>Elasticsearch<br/>Kibana<br/>Fleet Server"]
+
+        ATTACK -->|Controlled test activity| LINUX
+        ATTACK -->|Controlled test activity| WINDOWS
+
+        LINUX -->|Logs and telemetry| ELASTIC
+        WINDOWS -->|Windows Event Logs<br/>Sysmon telemetry| ELASTIC
     end
-     
-    HOST -->|Administration| ELASTIC
-    HOST -->|Administration| LINUX
-    HOST -->|Administration| WINDOWS
 
-    ATTACK -->|Controlled test activity| LINUX
-    ATTACK -->|Controlled test activity| WINDOWS
-
-    LINUX -->|Logs and telemetry| ELASTIC
-    WINDOWS -->|Windows Event Logs<br/>Sysmon telemetry| ELASTIC
+    HOST -->|Lab administration| ELASTIC
 ```
 The virtual machines communicate over a dedicated VMware host-only network.
 
