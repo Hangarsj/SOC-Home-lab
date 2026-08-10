@@ -95,6 +95,7 @@ Current detection work includes:
 - [Repeated Failed SSH Authentication](detections/linux/repeated-failed-ssh-authentication.md)
 - [Successful SSH Login After Repeated Failures](detections/linux/successful-ssh-login-after-failures.md)
 - [Linux User Added to sudo Group](detections/linux/user-added-to-sudo-group.md)
+- [New Windows user added to administrators group](detections/windows/new-user-added-to-administrators-group.md)
 
 ## Lessons Learned So Far
 
