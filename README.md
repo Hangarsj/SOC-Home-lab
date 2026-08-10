@@ -100,6 +100,7 @@ Current detection work includes:
 
 - During testing, the Linux root filesystem became full, which prevented `rsyslog` from writing new authentication events. As a result, Elastic received no new `system.auth` logs and the detection rules stopped triggering. The issue was resolved by extending the logical volume.
 
+- While building Windows detections, I learned that using SIDs can be more reliable than using account or group names. Names may differ between systems because of local configuration, while SIDs make it easier to identify the same user or known groups consistently.
 
 ## Roadmap 
 
