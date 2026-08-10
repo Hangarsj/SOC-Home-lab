@@ -60,10 +60,8 @@ Bridged networking is disabled, and NAT is only used temporarily when software i
 - Sysmon installed on the Windows endpoint for enhanced endpoint telemetry
 - Linux authentication, audit, and system telemetry
 - Windows Security, System, and Application event logs
-- Sysmon process and network telemetry
 - Kali Linux for controlled security testing
-- Linux detection rules for SSH authentication and privilege changes
-- Windows detection engineering in progress
+
  
 ## Why These Choices Were Made 
 
