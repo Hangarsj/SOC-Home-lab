@@ -42,13 +42,11 @@ Windows Event ID 4732
 Create a high severity alert 
 ```
 
-## Test 
+##  Atomic test 
 
-```cmd
-net user nw-testuser "password" /add
+![Atomic Test](screenshots/Atomic_T1136.png)
 
-net localgroup Administrators nw-testuser /add
-```
+![Elastic Alert](screenshots/windows_user_alert.png)
 
 ## Possible false positives 
 
