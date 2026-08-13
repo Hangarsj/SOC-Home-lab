@@ -44,9 +44,13 @@ Create a high severity alert
 
 ##  Atomic test 
 
-![Atomic Test](screenshots/Atomic_T1136.png)
+The detection was validated using Atomic Red Team with technique T1136.001-8 - Create a new Windows admin user. 
 
-![Elastic Alert](screenshots/windows_user_alert.png)
+![Atomic Test](../../screenshots/Atomic_T1136.png)
+
+![Elastic Alert](../../screenshots/windows_user_alert.png)
+
+The rule matched the accouunt creation followed by membership in the local Administrators group
 
 ## Possible false positives 
 
