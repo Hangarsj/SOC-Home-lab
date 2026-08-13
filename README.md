@@ -66,6 +66,7 @@ Current detection work includes:
 - [Successful SSH Login After Repeated Failures](detections/linux/successful-ssh-login-after-failures.md)
 - [Linux User Added to sudo Group](detections/linux/user-added-to-sudo-group.md)
 - [New Windows user added to administrators group](detections/windows/new-user-added-to-administrators-group.md)
+- [Ecoded Powershell Command execution](detections/windows/encoded_powershell_command_execution.md)
 
 ## Lessons Learned So Far
 
