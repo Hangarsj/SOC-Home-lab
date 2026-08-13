@@ -50,7 +50,7 @@ The detection was validated using Atomic Red Team with technique T1136.001-8 - C
 
 ![Elastic Alert](../../screenshots/windows_user_alert.png)
 
-The rule matched the accouunt creation followed by membership in the local Administrators group
+The rule matched the account creation followed by membership in the local Administrators group
 
 ## Possible false positives 
 
