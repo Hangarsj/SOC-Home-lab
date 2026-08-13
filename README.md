@@ -32,7 +32,7 @@ Bridged networking is disabled, and NAT is only used temporarily when software i
 - Sysmon installed on the Windows endpoint for enhanced endpoint telemetry
 - Linux authentication, audit, and system telemetry
 - Kali Linux for security testing 
-- Atmoic red team on the Windows endpoint
+- Atomic red team on the Windows endpoint
 
  
 ## Why These Choices Were Made 
