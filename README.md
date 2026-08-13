@@ -18,38 +18,10 @@ The main goal is to build a small but complete security monitoring environment t
 
 ## Current Architecture
 
-```mermaid
-flowchart TB
-    HOST["Windows Host<br/>VMware Workstation"]
+![Architecture](screenshots/Architecture.png)
 
-    subgraph LAB["Isolated Network<br/>10.10.20.0/24"]
-        direction TB
 
-        SPACE[" "]:::invisible
-
-        ATTACK["NW-ATTACK01<br/>Kali Linux"]
-
-        LINUX["NW-LINUX01<br/>Ubuntu Server<br/>Elastic Agent<br/>Nginx<br/>Auditd Manager"]
-
-        WINDOWS["NW-WINDOWS01<br/>Windows 11 Enterprise<br/>Elastic Agent<br/>Sysmon"]
-
-        ELASTIC["NW-ELASTIC01<br/>Elasticsearch<br/>Kibana<br/>Fleet Server"]
-
-        SPACE ~~~ ATTACK
-
-        ATTACK -->|Controlled test activity| LINUX
-        ATTACK -->|Controlled test activity| WINDOWS
-
-        LINUX -->|Logs and telemetry| ELASTIC
-        WINDOWS -->|Windows Event Logs<br/>Sysmon telemetry| ELASTIC
-    end
-
-    HOST --- LAB
-
-    classDef invisible fill:transparent,stroke:transparent,color:transparent;
-```
 The virtual machines communicate over a dedicated VMware host-only network.
-
 Bridged networking is disabled, and NAT is only used temporarily when software installation or updates require internet access.
 
 ## Current Implementation
