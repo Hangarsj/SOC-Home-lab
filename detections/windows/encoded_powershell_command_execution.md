@@ -9,7 +9,7 @@ Commonly used to obfuscate commands and may indicate suspicious or malicious scr
 - **Platform:** Windows 
 - **Rule Type:** Custom query 
 - **Severity:** Medium
-- **MITR ATT&CK:** 
+- **MITRE ATT&CK:** 
     - TA0002 Execution 
         - T1059 Command and scripting interpreter
             - T1059.001 Powershell  
@@ -48,8 +48,6 @@ The activity was first confirmed in Elastic Discover using:
 `host.name:"nw-windows01" and process.name:"powershell.exe" and process.args:"-e"`
 
 ![Elastic log](../../screenshots/Powershell_log.png)
-
-![Elastic Alert](../../screenshots/)
 
 
 ## Possible false positives 
