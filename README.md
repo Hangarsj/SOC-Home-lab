@@ -31,8 +31,8 @@ Bridged networking is disabled, and NAT is only used temporarily when software i
 - Windows 11 Enterprise endpoint monitored with Elastic Agent
 - Sysmon installed on the Windows endpoint for enhanced endpoint telemetry
 - Linux authentication, audit, and system telemetry
-- Windows Security, System, and Application event logs
-- Kali Linux for controlled security testing
+- Kali Linux for security testing 
+- Atmoic red team on the Windows endpoint
 
  
 ## Why These Choices Were Made 
@@ -79,7 +79,7 @@ Current detection work includes:
 - Build security monitoring dashboards in Kibana
 - Continue developing and tuning Linux detection rules
 - Improve Linux hardening 
-- Add controlled attack simulations with Atomic Red Team
+
 
 ## Disclaimer 
 
