@@ -77,7 +77,7 @@ Current detection work includes:
 ## Roadmap 
 
 - Continue developing and testing Windows detection rules
-- Continue developing and tuning Linux detection rules
+- Continue developing and testing Linux detection rules
 - Develop Sigma Rules and test conversion to Elastic
 - Build security monitoring dashboards in Kibana
 - Improve Linux hardening 
