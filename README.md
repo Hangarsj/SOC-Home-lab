@@ -12,9 +12,11 @@ The main goal is to build a small but complete security monitoring environment t
 - Linux and Windows security monitoring 
 - Log and audit collection
 - Alert investigation 
-- Detection rule development, testing and tuning
+- Detection rule development, testing and tuning 
+- Detection as code 
 - MITRE ATT&CK mapping  
 - Linux hardening  
+
 
 ## Current Architecture
 
@@ -39,48 +41,57 @@ Bridged networking is disabled, and NAT is only used temporarily when software i
 
 Elastic was selected because it supports log collection, endpoint management, detection rules, alerting and investigation within the same environment.
 
-Elasticsearch, Kibana, and Fleet Server run on one virtual machine to reduce memory usage. This is a practical choice for a laptop-based lab.
+Elasticsearch, Kibana, and Fleet Server run on one virtual machine to reduce memory usage. 
 
-Ubuntu Server is used as the monitored endpoint because it provides access to Linux authentication logs, audit events, services, users, permissions and system configuration. 
+Atomic Red Team is used to generate repeatable test activity and validate selected detections. 
 
-Kali Linux is used only to generate controlled test activity inside the isolated network.
+Kali Linux is used only to generate controlled test activity inside the isolated network. 
 
 ## Detection Engineering 
 
 Detection development follows a simple workflow: 
 
 1. Generate activity 
-2. Confirm the activity in raw logs
+2. Confirm the raw event in Elastic
 3. Identify useful fields 
-4. Create a detection rule 
-5. Verify that the rule triggers
-6. Investigate the generated alert
-7. Tune and document the rule 
+4. Build detection 
+5. Run the activity again  
+6. Confirm the alert
+7. Investigate and tune
+8. Document the result  
 
 
-### Detection Rules 
+## Detection Rules 
 
-Current detection work includes: 
+### Linux 
 
 - [Repeated Failed SSH Authentication](detections/linux/repeated-failed-ssh-authentication.md)
 - [Successful SSH Login After Repeated Failures](detections/linux/successful-ssh-login-after-failures.md)
 - [Linux User Added to sudo Group](detections/linux/user-added-to-sudo-group.md)
+
+### Windows
+
 - [New Windows user added to administrators group](detections/windows/new-user-added-to-administrators-group.md)
 - [Encoded Powershell Command execution](detections/windows/encoded_powershell_command_execution.md)
 
+
 ## Lessons Learned So Far
 
-- During testing, the Linux root filesystem became full, which prevented `rsyslog` from writing new authentication events. As a result, Elastic received no new `system.auth` logs and the detection rules stopped triggering. The issue was resolved by extending the logical volume.
+A few problems in the lab have been useful learning points:
 
-- While building Windows detections, I learned that using SIDs can be more reliable than using account or group names. Names may differ between systems because of local configuration, while SIDs make it easier to identify the same user or known groups consistently.
+- The Linux root filesystem filled up during testing. `rsyslog` could no longer write authentication events, which stopped new `system.auth` data from reaching Elastic. I fixed the problem by extending the logical volume.  
+
+- Windows groups names are not always the best value to build a detection around. For known groups, using the SID can make the rule less dependent on language or local naming.  
+
 
 ## Roadmap 
 
 - Continue developing and testing Windows detection rules
 - Continue developing and testing Linux detection rules
-- Develop Sigma Rules and test conversion to Elastic
 - Build security monitoring dashboards in Kibana
-- Improve Linux hardening 
+- Improve Linux hardening
+- Move the detection logic into version-controlled Sigma rules. 
+- Add GitHub Actions deployment for rules to Elastic 
 
 
 ## Disclaimer 
